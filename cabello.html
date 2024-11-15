@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte de Cabello - Barbería Alura</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/productos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de la Barbería Alura">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="pago.html" class="carrito-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="icono-carrito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">Corte de Cabello</h1>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="/images/productos/corteCabelloClasico.jpg" alt="Corte Clásico">
+                <h2>Corte Clásico</h2>
+                <p class="precio">$20.00</p>
+                <button class="btn-agregar" data-id="1" data-nombre="Corte Clásico" data-precio="20.00">Agregar</button>
+            </div>
+            <div class="producto-card">
+                <img src="/images/productos/corteCabelloClasico.png" alt="Corte Moderno">
+                <h2>Corte Moderno</h2>
+                <p class="precio">$25.00</p>
+                <button class="btn-agregar" data-id="2" data-nombre="Corte Moderno" data-precio="25.00">Agregar</button>
+            </div>
+            <!-- Agrega más productos según sea necesario -->
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <img src="img/logo-blanco.png" alt="Logo de la Barbería Alura">
+            <p class="copyright">&copy; Copyright Barbería Alura - 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+/* pago.css */
+
+.pago-container {
+    padding: 2rem 0;
+}
+
+.pago-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.resumen-pedido,
+.formulario-pago {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.lista-productos {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.lista-productos li,
+.subtotal,
+.impuestos,
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-padron {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-padron:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon input {
+    padding-right: 2.5rem;
+}
+
+.input-icon i {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para la tarjeta animada */
+.tarjeta-animada {
+    perspective: 1000px;
+    margin-bottom: 2rem;
+}
+
+.tarjeta {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.tarjeta-frente,
+.tarjeta-reverso {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-frente {
+    background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-reverso {
+    background: linear-gradient(45deg, #2a2a2a, #5a5a5a);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.tarjeta-tipo {
+    font-size: 1.5rem;
+    align-self: flex-end;
+}
+
+.tarjeta-numero {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.tarjeta-nombre,
+.tarjeta-expiracion {
+    font-size: 1rem;
+}
+
+.tarjeta-cvv {
+    background: white;
+    color: black;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+}
+
+.tarjeta.is-flipped {
+    transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+    .pago-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+/* Agregar estos estilos al archivo pago.css existente */
+
+.producto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.producto-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    color: #c82333;
+}
+
+.notificacion {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: fadeInOut 3s ease-in-out;
+    z-index: 1000;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+

@@ -1,0 +1,75 @@
+/* Home page */
+.banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .principal {
+    padding: 4rem 0;
+  }
+  
+  .mapa,
+  .diferenciales,
+  .video {
+    margin-bottom: 4rem;
+  }
+  
+  .lista-diferenciales {
+    list-style-type: none;
+  }
+  
+  .lista-diferenciales li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .lista-diferenciales li::before {
+    content: '✓';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+  }
+  
+  /* Products page */
+  .productos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .producto-item {
+    margin-bottom: 2rem;
+  }
+  
+  .producto-item img {
+    border-radius: 8px 8px 0 0;
+  }
+  
+  /* Contact page */
+  .formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .input-padron {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .horario {
+    margin-top: 3rem;
+  }

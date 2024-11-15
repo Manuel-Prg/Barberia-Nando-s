@@ -1,0 +1,124 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago - Barbería Alura</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/pago.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de la Barbería Alura">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container pago-container">
+        <h1 class="section-title">Finalizar Compra</h1>
+        <div class="pago-grid">
+            <div class="card resumen-pedido">
+                <div class="card-content">
+                    <h2 class="card-title">Resumen del Pedido</h2>
+                    <ul id="lista-productos" class="lista-productos">
+                        <!-- Los productos se cargarán dinámicamente aquí -->
+                    </ul>
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="impuestos">
+                        <span>Impuestos (10%)</span>
+                        <span id="impuestos">$0.00</span>
+                    </div>
+                    <div class="total">
+                        <strong>Total</strong>
+                        <strong id="total">$0.00</strong>
+                    </div>
+                </div>
+            </div>
+            <form class="formulario-pago card">
+                <div class="card-content">
+                    <h2 class="card-title">Información de Pago</h2>
+                    <div class="tarjeta-animada">
+                        <div class="tarjeta">
+                            <div class="tarjeta-frente">
+                                <div class="tarjeta-tipo"></div>
+                                <div class="tarjeta-numero">•••• •••• •••• ••••</div>
+                                <div class="tarjeta-nombre">Nombre del Titular</div>
+                                <div class="tarjeta-expiracion">MM/AA</div>
+                            </div>
+                            <div class="tarjeta-reverso">
+                                <div class="tarjeta-cvv"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre en la Tarjeta</label>
+                        <input type="text" id="nombre" class="input-padron" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="numero-tarjeta">Número de Tarjeta</label>
+                        <div class="input-icon">
+                            <input type="text" id="numero-tarjeta" class="input-padron" required placeholder="1234 5678 9012 3456" maxlength="19" />
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fecha-expiracion">Fecha de Expiración</label>
+                            <input type="text" id="fecha-expiracion" class="input-padron" required placeholder="MM/AA" maxlength="5" />
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <div class="input-icon">
+                                <input type="text" id="cvv" class="input-padron" required placeholder="123" maxlength="4" />
+                                <i class="fas fa-question-circle" title="El código de seguridad de 3 o 4 dígitos en el reverso de su tarjeta"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección de Facturación</label>
+                        <input type="text" id="direccion" class="input-padron" required />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" class="input-padron" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo-postal">Código Postal</label>
+                            <input type="text" id="codigo-postal" class="input-padron" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Realizar Pago</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="img/logo-blanco.png" alt="Logo de la Barbería Alura">
+            </div>
+            <p class="copyright">&copy; Copyright Barbería Alura - 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/pago.js"></script>
+</body>
+</html>
