@@ -1,21 +1,109 @@
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2-columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Header layout styles */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Responsive navigation layout */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
   }
-  
-  .grid {
-    display: grid;
-    gap: 20px;
+
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary-color);
+    padding: 5rem 2rem 2rem;
+    z-index: 5;
   }
-  
-  @media (min-width: 768px) {
-    .grid-2-columns {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .grid-3-columns {
-      grid-template-columns: repeat(3, 1fr);
-    }
+
+  .main-nav.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .main-nav li {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-content {
+    justify-content: space-between;
+  }
+
+  .main-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .grid-2-columns,
+  .grid-3-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner img {
+    height: 200px;
+  }
+}

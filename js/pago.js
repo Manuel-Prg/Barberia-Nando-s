@@ -83,6 +83,61 @@ document.addEventListener('DOMContentLoaded', function() {
     cvv.addEventListener('focus', () => tarjeta.classList.add('is-flipped'));
     cvv.addEventListener('blur', () => tarjeta.classList.remove('is-flipped'));
 
+    //animacion transaccion
+    const formularioPago = document.querySelector('.formulario-pago');
+    const animacionTransaccion = document.getElementById('animacion-transaccion');
+    const mensajeTransaccion = document.getElementById('mensaje-transaccion');
+
+    formularioPago.addEventListener('submit', function(e) {
+        e.preventDefault();
+        simularTransaccion();
+    });
+
+    function simularTransaccion() {
+        // Mostrar la animación de carga
+        animacionTransaccion.style.display = 'flex';
+
+        // Simular un proceso de pago que tarda entre 2 y 4 segundos
+        const tiempoProceso = Math.random() * 2000 + 2000;
+
+        setTimeout(() => {
+            // Cambiar el mensaje a "Transacción exitosa"
+            mensajeTransaccion.textContent = 'Transacción exitosa';
+
+            // Esperar 1 segundo más antes de ocultar la animación
+            setTimeout(() => {
+                animacionTransaccion.style.display = 'none';
+                mostrarMensajeExito();
+                limpiarFormulario();
+                limpiarCarrito();
+            }, 1000);
+        }, tiempoProceso);
+    }
+
+    function mostrarMensajeExito() {
+        const mensajeExito = document.createElement('div');
+        mensajeExito.textContent = '¡Pago realizado con éxito!';
+        mensajeExito.className = 'mensaje-exito';
+        document.body.appendChild(mensajeExito);
+
+        setTimeout(() => {
+            mensajeExito.remove();
+        }, 3000);
+    }
+
+    function limpiarFormulario() {
+        formularioPago.reset();
+        actualizarTarjeta({ target: { id: 'numero-tarjeta', value: '' } });
+        actualizarTarjeta({ target: { id: 'nombre', value: '' } });
+        actualizarTarjeta({ target: { id: 'fecha-expiracion', value: '' } });
+        actualizarTarjeta({ target: { id: 'cvv', value: '' } });
+    }
+
+    function limpiarCarrito() {
+        localStorage.removeItem('carrito');
+        cargarProductos();
+    }
+
     //funcion para cargar los productos
     function cargarProductos() {
         const listaProductos = document.getElementById('lista-productos');

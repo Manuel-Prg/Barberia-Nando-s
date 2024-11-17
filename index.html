@@ -14,20 +14,26 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <div class="logo">
-                <img src="/img/logo.png" alt="Logo de la Barbería Alura" />
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/img/logo.png" alt="Logo de la Barbería Alura" />
+                </div>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="productos.html">Productos</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
-
     <main>
         <section class="banner">
             <img src="/banner/banner.jpg" alt="Banner de la Barbería" />
@@ -81,5 +87,6 @@
             <p class="copyright">&copy; Copyright Barbería Alura - 2023</p>
         </div>
     </footer>
+    <script src="js/menu.js"></script>
 </body>
 </html>
