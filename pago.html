@@ -62,42 +62,67 @@
             <form class="formulario-pago card">
                 <div class="card-content">
                     <h2 class="card-title">Información de Pago</h2>
-                    <div class="tarjeta-animada">
-                        <div class="tarjeta">
-                            <div class="tarjeta-frente">
-                                <div class="tarjeta-tipo"></div>
-                                <div class="tarjeta-numero">•••• •••• •••• ••••</div>
-                                <div class="tarjeta-nombre">Nombre del Titular</div>
-                                <div class="tarjeta-expiracion">MM/AA</div>
+                    <div class="metodos-pago">
+                        <h3>Seleccione el método de pago:</h3>
+                        <div class="opciones-pago">
+                            <label class="opcion-pago">
+                                <input type="radio" name="metodo-pago" value="tarjeta" checked>
+                                <span class="opcion-pago-texto">Tarjeta de Crédito</span>
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="metodo-pago" value="mercadopago">
+                                <span class="opcion-pago-texto">Mercado Pago</span>
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="metodo-pago" value="paypal">
+                                <span class="opcion-pago-texto">PayPal</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="formulario-tarjeta">
+                        <div class="tarjeta-animada">
+                            <div class="tarjeta">
+                                <div class="tarjeta-frente">
+                                    <div class="tarjeta-tipo"></div>
+                                    <div class="tarjeta-numero">•••• •••• •••• ••••</div>
+                                    <div class="tarjeta-nombre">Nombre del Titular</div>
+                                    <div class="tarjeta-expiracion">MM/AA</div>
+                                </div>
+                                <div class="tarjeta-reverso">
+                                    <div class="tarjeta-cvv"></div>
+                                </div>
                             </div>
-                            <div class="tarjeta-reverso">
-                                <div class="tarjeta-cvv"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre en la Tarjeta</label>
-                        <input type="text" id="nombre" class="input-padron" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="numero-tarjeta">Número de Tarjeta</label>
-                        <div class="input-icon">
-                            <input type="text" id="numero-tarjeta" class="input-padron" required placeholder="1234 5678 9012 3456" maxlength="19" />
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fecha-expiracion">Fecha de Expiración</label>
-                            <input type="text" id="fecha-expiracion" class="input-padron" required placeholder="MM/AA" maxlength="5" />
                         </div>
                         <div class="form-group">
-                            <label for="cvv">CVV</label>
+                            <label for="nombre">Nombre en la Tarjeta</label>
+                            <input type="text" id="nombre" class="input-padron" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="numero-tarjeta">Número de Tarjeta</label>
                             <div class="input-icon">
-                                <input type="text" id="cvv" class="input-padron" required placeholder="123" maxlength="4" />
-                                <i class="fas fa-question-circle" title="El código de seguridad de 3 o 4 dígitos en el reverso de su tarjeta"></i>
+                                <input type="text" id="numero-tarjeta" class="input-padron" required placeholder="1234 5678 9012 3456" maxlength="19" />
+                                <i class="fas fa-credit-card"></i>
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fecha-expiracion">Fecha de Expiración</label>
+                                <input type="text" id="fecha-expiracion" class="input-padron" required placeholder="MM/AA" maxlength="5" />
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <div class="input-icon">
+                                    <input type="text" id="cvv" class="input-padron" required placeholder="123" maxlength="4" />
+                                    <i class="fas fa-question-circle" title="El código de seguridad de 3 o 4 dígitos en el reverso de su tarjeta"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="formulario-mercadopago" style="display: none;">
+                        <p>Será redirigido a Mercado Pago para completar su pago.</p>
+                    </div>
+                    <div id="formulario-paypal" style="display: none;">
+                        <p>Será redirigido a PayPal para completar su pago.</p>
                     </div>
                     <div class="form-group">
                         <label for="direccion">Dirección de Facturación</label>

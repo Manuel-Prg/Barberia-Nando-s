@@ -124,10 +124,13 @@ label {
     background-color: #0056b3;
 }
 
-/* Estilos para la tarjeta animada */
+/* Estilos actualizados para la tarjeta animada */
 .tarjeta-animada {
     perspective: 1000px;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem;
 }
 
 .tarjeta {
@@ -170,28 +173,107 @@ label {
 .tarjeta-tipo {
     font-size: 1.5rem;
     align-self: flex-end;
+    margin-bottom: 1rem;
 }
 
 .tarjeta-numero {
     font-size: 1.5rem;
     letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 1rem;
+    width: 100%;
+    word-spacing: 4px;
 }
 
 .tarjeta-nombre,
 .tarjeta-expiracion {
     font-size: 1rem;
+    text-align: left;
+    margin-top: 0.5rem;
 }
 
 .tarjeta-cvv {
     background: white;
     color: black;
-    padding: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
     width: 50px;
     text-align: center;
+    margin-right: 20px;
 }
 
 .tarjeta.is-flipped {
     transform: rotateY(180deg);
+}
+
+.metodos-pago {
+    margin-bottom: 2rem;
+}
+
+.metodos-pago h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.opciones-pago {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.opcion-pago {
+    flex: 1;
+    min-width: 120px;
+    background-color: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.opcion-pago:hover {
+    border-color: var(--accent-color);
+}
+
+.opcion-pago input[type="radio"] {
+    display: none;
+}
+
+.opcion-pago input[type="radio"]:checked + .opcion-pago-texto {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.opcion-pago-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.opcion-pago-texto::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.opcion-pago input[value="tarjeta"] + .opcion-pago-texto::before {
+    background-image: url('ruta/a/icono-tarjeta.png');
+}
+
+.opcion-pago input[value="mercadopago"] + .opcion-pago-texto::before {
+    background-image: url('ruta/a/icono-mercadopago.png');
+}
+
+.opcion-pago input[value="paypal"] + .opcion-pago-texto::before {
+    background-image: url('ruta/a/icono-paypal.png');
 }
 
 @media (max-width: 768px) {

@@ -4,12 +4,65 @@ document.addEventListener('DOMContentLoaded', function() {
     const nombreTarjeta = document.getElementById('nombre');
     const fechaExpiracion = document.getElementById('fecha-expiracion');
     const cvv = document.getElementById('cvv');
+    const tarjetaAnimada = document.querySelector('.tarjeta-animada');
 
     const tarjetaNumero = document.querySelector('.tarjeta-numero');
     const tarjetaNombre = document.querySelector('.tarjeta-nombre');
     const tarjetaExpiracion = document.querySelector('.tarjeta-expiracion');
     const tarjetaCvv = document.querySelector('.tarjeta-cvv');
     const tarjetaTipo = document.querySelector('.tarjeta-tipo');
+
+    const metodoPagoInputs = document.querySelectorAll('input[name="metodo-pago"]');
+    const formularioTarjeta = document.getElementById('formulario-tarjeta');
+    const formularioMercadoPago = document.getElementById('formulario-mercadopago');
+    const formularioPayPal = document.getElementById('formulario-paypal');
+
+    metodoPagoInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            switch(this.value) {
+                case 'tarjeta':
+                    formularioTarjeta.style.display = 'block';
+                    tarjetaAnimada.style.display = 'block';
+                    formularioMercadoPago.style.display = 'none';
+                    formularioPayPal.style.display = 'none';
+                    break;
+                case 'mercadopago':
+                    formularioTarjeta.style.display = 'none';
+                    tarjetaAnimada.style.display = 'none';
+                    formularioMercadoPago.style.display = 'block';
+                    formularioPayPal.style.display = 'none';
+                    break;
+                case 'paypal':
+                    formularioTarjeta.style.display = 'none';
+                    tarjetaAnimada.style.display = 'none';
+                    formularioMercadoPago.style.display = 'none';
+                    formularioPayPal.style.display = 'block';
+                    break;
+            }
+        });
+    });
+
+    const formularioPago = document.querySelector('.formulario-pago');
+    const animacionTransaccion = document.getElementById('animacion-transaccion');
+    const mensajeTransaccion = document.getElementById('mensaje-transaccion');
+
+    formularioPago.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked').value;
+        
+        switch(metodoPagoSeleccionado) {
+            case 'tarjeta':
+                simularTransaccion('Procesando pago con tarjeta...');
+                break;
+            case 'mercadopago':
+                simularTransaccion('Redirigiendo a Mercado Pago...');
+                break;
+            case 'paypal':
+                simularTransaccion('Redirigiendo a PayPal...');
+                break;
+        }
+    });
+
 
     function actualizarTarjeta(e) {
         const { id, value } = e.target;
@@ -83,28 +136,32 @@ document.addEventListener('DOMContentLoaded', function() {
     cvv.addEventListener('focus', () => tarjeta.classList.add('is-flipped'));
     cvv.addEventListener('blur', () => tarjeta.classList.remove('is-flipped'));
 
-    //animacion transaccion
-    const formularioPago = document.querySelector('.formulario-pago');
-    const animacionTransaccion = document.getElementById('animacion-transaccion');
-    const mensajeTransaccion = document.getElementById('mensaje-transaccion');
-
     formularioPago.addEventListener('submit', function(e) {
         e.preventDefault();
-        simularTransaccion();
+        const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked').value;
+        
+        switch(metodoPagoSeleccionado) {
+            case 'tarjeta':
+                simularTransaccion('Procesando pago con tarjeta...');
+                break;
+            case 'mercadopago':
+                simularTransaccion('Redirigiendo a Mercado Pago...');
+                break;
+            case 'paypal':
+                simularTransaccion('Redirigiendo a PayPal...');
+                break;
+        }
     });
 
-    function simularTransaccion() {
-        // Mostrar la animación de carga
+    function simularTransaccion(mensaje) {
         animacionTransaccion.style.display = 'flex';
+        mensajeTransaccion.textContent = mensaje;
 
-        // Simular un proceso de pago que tarda entre 2 y 4 segundos
         const tiempoProceso = Math.random() * 2000 + 2000;
 
         setTimeout(() => {
-            // Cambiar el mensaje a "Transacción exitosa"
             mensajeTransaccion.textContent = 'Transacción exitosa';
 
-            // Esperar 1 segundo más antes de ocultar la animación
             setTimeout(() => {
                 animacionTransaccion.style.display = 'none';
                 mostrarMensajeExito();
@@ -113,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         }, tiempoProceso);
     }
-
     function mostrarMensajeExito() {
         const mensajeExito = document.createElement('div');
         mensajeExito.textContent = '¡Pago realizado con éxito!';
