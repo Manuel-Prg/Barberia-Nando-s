@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corte de Cabello y Barba - Barbería Alura</title>
-    <link rel="stylesheet" href="css/productos.css">
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/pages.css" />
-    <link rel="stylesheet" href="css/utilities.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="/img/logo.png" alt="Logo de la Barbería Alura" />
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corte de Cabello y Barba - Barbería Alura</title>
+        <link rel="stylesheet" href="css/productos.css">
+        <link rel="stylesheet" href="/css/base.css" />
+        <link rel="stylesheet" href="/css/layout.css" />
+        <link rel="stylesheet" href="/css/components.css" />
+        <link rel="stylesheet" href="/css/pages.css" />
+        <link rel="stylesheet" href="/css/utilities.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="/img/logo.png"
+                            alt="Logo de la Barbería Alura" />
+                    </div>
+                    <button class="menu-toggle" aria-label="Abrir menú">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="productos.html">Productos</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="agenda.html">Agenda</a></li>
+                        </ul>
+                    </nav>
+                    <a href="pago.html" class="carrito-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="carrito-contador">0</span>
+                    </a>
                 </div>
-                <button class="menu-toggle" aria-label="Abrir menú">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="productos.html">Productos</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="agenda.html">Agenda</a></li>
-                    </ul>
-                </nav>
-                <a href="pago.html" class="carrito-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="carrito-contador">0</span>
-                </a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
-        <h1 class="page-title">Corte de Cabello y Barba</h1>
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="/images/productos/comboClasico.jpg" alt="Combo Clásico">
-                <h2>Combo Clásico</h2>
-                <p class="precio">$32.00</p>
-                <button class="btn-agregar" data-id="5" data-nombre="Combo Clásico" data-precio="32.00">Agregar</button>
-            </div>
-            <div class="producto-card">
-                <img src="/images/productos/comboPremiun.jpg" alt="Combo Premium">
-                <h2>Combo Premium</h2>
-                <p class="precio">$40.00</p>
-                <button class="btn-agregar" data-id="6" data-nombre="Combo Premium" data-precio="40.00">Agregar</button>
-            </div>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img/logo-blanco.png" alt="Logo de la Barbería Alura">
+        <main class="container">
+            <h1 class="page-title">Corte de Cabello y Barba</h1>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="/images/productos/comboClasico.jpg"
+                        alt="Combo Clásico">
+                    <h2>Combo Clásico</h2>
+                    <p class="precio">$32.00</p>
+                    <button class="btn-agregar" data-id="5"
+                        data-nombre="Combo Clásico"
+                        data-precio="32.00">Agregar</button>
                 </div>
-                <p class="copyright">&copy; Copyright Barbería Alura - 2024</p>
+                <div class="producto-card">
+                    <img src="/images/productos/comboPremiun.jpg"
+                        alt="Combo Premium">
+                    <h2>Combo Premium</h2>
+                    <p class="precio">$40.00</p>
+                    <button class="btn-agregar" data-id="6"
+                        data-nombre="Combo Premium"
+                        data-precio="40.00">Agregar</button>
+                </div>
             </div>
-        </div>
-    </footer>
+        </main>
 
-    <script src="js/productos.js"></script>
-    <script src="/js/menu.js"></script>
-</body>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="img/logo-blanco.png"
+                            alt="Logo de la Barbería Alura">
+                    </div>
+                    <p class="copyright">&copy; Copyright Barbería Alura -
+                        2024</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/productos.js"></script>
+        <script src="/js/menu.js"></script>
+    </body>
+
 </html>
